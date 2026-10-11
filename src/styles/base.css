@@ -1,0 +1,269 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--cream-100);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: var(--fs-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+video,
+audio {
+  max-width: 100%;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
+a {
+  color: var(--wine-700);
+  text-underline-offset: 3px;
+}
+
+section[id],
+header[id],
+footer[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--wine-950);
+  color: var(--cream-100);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 700;
+  transition: top 0.2s var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+/* Visible focus everywhere — gold ring */
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Layout helpers — fluidos, sem overflow-x em 360px */
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+.container-narrow {
+  width: min(100% - 2.5rem, var(--container-narrow));
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 719px) {
+  .container,
+  .container-narrow {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .container-narrow {
+    width: min(100% - 2rem, var(--container-narrow));
+  }
+}
+
+/* Buttons — alvo tátil ≥44px, 48px+ em toque grosseiro */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: var(--tap-min);
+  min-width: var(--tap-min);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    background 0.25s var(--ease-out),
+    color 0.25s var(--ease-out);
+}
+
+@media (pointer: coarse) {
+  .btn {
+    min-height: var(--tap-comfort);
+  }
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn-gold {
+  background: var(--gold-500);
+  color: var(--wine-950);
+  box-shadow: 0 8px 28px rgba(194, 161, 100, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cream-100);
+  border-color: rgba(250, 245, 233, 0.45);
+}
+
+.btn-wine {
+  background: var(--wine-900);
+  color: var(--cream-100);
+}
+
+.btn-outline-wine {
+  background: transparent;
+  color: var(--wine-900);
+  border-color: var(--wine-700);
+}
+
+/* Hover SOMENTE como reforço em desktop — nunca esconde/mostra conteúdo */
+@media (hover: hover) {
+  .btn-gold:hover {
+    background: #d3b478;
+    box-shadow: 0 12px 36px rgba(194, 161, 100, 0.45);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--cream-100);
+    background: rgba(250, 245, 233, 0.1);
+  }
+
+  .btn-wine:hover {
+    background: var(--wine-700);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-wine:hover {
+    background: var(--wine-900);
+    color: var(--cream-100);
+  }
+}
+
+.back-to-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-6);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--rosewood-700);
+  min-height: var(--tap-min);
+  min-width: var(--tap-min);
+  padding: 0.5rem 0.75rem;
+  margin-left: -0.75rem;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .back-to-portal:hover {
+    color: var(--wine-900);
+    text-decoration: underline;
+  }
+}
+
+.back-to-portal:active {
+  color: var(--wine-900);
+}
+
+.on-wine .back-to-portal {
+  color: var(--rose-old-300);
+}
+
+@media (hover: hover) {
+  .on-wine .back-to-portal:hover {
+    color: var(--cream-100);
+  }
+}
+
+::selection {
+  background: var(--gold-500);
+  color: var(--wine-950);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

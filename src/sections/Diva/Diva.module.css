@@ -1,0 +1,118 @@
+.sealed {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 161, 100, 0.2), transparent 60%),
+    var(--floral-white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  display: grid;
+  gap: 1.25rem;
+  justify-items: center;
+  min-width: 0;
+}
+
+.seal {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--cream-100);
+  background: radial-gradient(circle at 35% 30%, var(--wine-700), var(--wine-950));
+  border: 2px solid var(--gold-500);
+  box-shadow: 0 8px 24px rgba(61, 15, 34, 0.3);
+}
+
+.quote {
+  margin: 0;
+  max-width: 36rem;
+  min-width: 0;
+}
+
+.quote p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1rem + 1vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--wine-900);
+  overflow-wrap: break-word;
+}
+
+.modalKicker {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.3rem + 2vw, 1.8rem);
+  line-height: 1.25;
+  color: var(--wine-900);
+  overflow-wrap: break-word;
+}
+
+.modalBody {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: 65ch;
+  overflow-wrap: break-word;
+}
+
+.video {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: var(--radius-md);
+  background: #000;
+  display: block;
+}
+
+.videoPlaceholder {
+  border: 1px dashed var(--gold-500);
+  border-radius: var(--radius-md);
+  background: var(--cream-100);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.videoIcon {
+  font-size: 2rem;
+  color: var(--gold-500);
+}
+
+.videoPlaceholder p {
+  margin: 0;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--cream-100);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  line-height: 1.6;
+  max-width: 65ch;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 720px) {
+  .sealed {
+    padding: 2.5rem 2rem;
+  }
+}

@@ -1,0 +1,63 @@
+:root {
+  --wine-950: #230714;
+  --wine-900: #3d0f22;
+  --wine-700: #68233c;
+  --cream-100: #faf5e9;
+  --cream-200: #f1e7d2;
+  --floral-white: #fffefa;
+  --rose-old-300: #d9b8bb;
+  --rose-old-500: #c1949a;
+  --rosewood-700: #7c4a53;
+  --ink: #2e1e26;
+  --muted: #6b5a62;
+  --gold-500: #c2a164;
+  --gold-700: #8c6e3e;
+  --line: #e7d9c3;
+
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Parisienne", "Cormorant Garamond", cursive;
+
+  --container: 1080px;
+  --container-narrow: 760px;
+  --header-offset: 72px;
+
+  /* ——— Mobile-first fluid ——— */
+  --gutter: 1.25rem;
+  --section-pad: clamp(3rem, 8vw + 1rem, 5.5rem);
+  --section-pad-lg: clamp(3.5rem, 10vw + 1rem, 6.5rem);
+  --tap-min: 44px;
+  --tap-comfort: 48px;
+  --tap-large: 56px;
+  --hero-min: 100vh;
+  --hero-min-svh: 100svh;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+
+  /* Fluid type scale (mobile-first, sem zoom horizontal) */
+  --fs-body: clamp(1rem, 0.94rem + 0.6vw, 1.0625rem);
+  --fs-h1: clamp(2.4rem, 1.6rem + 6vw, 5.2rem);
+  --fs-h2: clamp(1.9rem, 1.5rem + 2.4vw, 3rem);
+  --fs-lead: clamp(1rem, 0.95rem + 0.8vw, 1.15rem);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 12px 40px rgba(35, 7, 20, 0.12);
+  --shadow-lift: 0 18px 60px rgba(35, 7, 20, 0.18);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 700ms;
+}

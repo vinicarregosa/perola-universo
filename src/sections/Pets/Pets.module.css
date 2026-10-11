@@ -1,0 +1,112 @@
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.card {
+  background: var(--floral-white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  min-width: 0;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+.body {
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.15rem + 1.5vw, 1.6rem);
+  color: var(--wine-900);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  overflow-wrap: break-word;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+}
+
+.message {
+  margin: 0;
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-size: clamp(1.02rem, 0.96rem + 0.6vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.birthday {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, var(--wine-950), var(--wine-700));
+  color: var(--cream-100);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(194, 161, 100, 0.45);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  box-shadow: var(--shadow-soft);
+  min-width: 0;
+}
+
+.paws {
+  font-size: 1.8rem;
+}
+
+.birthdayText {
+  margin: 0;
+  font-size: clamp(1rem, 0.95rem + 0.5vw, 1.1rem);
+  line-height: 1.75;
+  max-width: 40rem;
+  color: var(--cream-200);
+  overflow-wrap: break-word;
+}
+
+.signature {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: clamp(1.4rem, 1.25rem + 1vw, 1.7rem);
+  color: var(--gold-500);
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .body {
+    padding: 1.5rem;
+  }
+
+  .birthday {
+    padding: 2.25rem 2rem;
+    margin-top: 2rem;
+  }
+}

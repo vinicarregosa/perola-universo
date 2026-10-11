@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pérola e lírio">
+  <rect width="64" height="64" rx="14" fill="#230714"/>
+  <g stroke="#C2A164" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M32 50 V30"/>
+    <path d="M32 30 C26 27 23 21 24 14 C29 15 32 21 32 30 Z"/>
+    <path d="M32 30 C38 27 41 21 40 14 C35 15 32 21 32 30 Z"/>
+    <path d="M32 38 C27 36.5 22 36.5 17 39.5 C22 42.5 29 42.5 32 38 Z"/>
+    <path d="M32 38 C37 36.5 42 36.5 47 39.5 C42 42.5 35 42.5 32 38 Z"/>
+  </g>
+  <circle cx="32" cy="18" r="6" fill="#F1E7D2"/>
+  <circle cx="32" cy="18" r="6" fill="url(#g)"/>
+  <circle cx="30" cy="16" r="1.8" fill="#FFFEFA" opacity="0.95"/>
+  <defs>
+    <radialGradient id="g" cx="0.35" cy="0.35" r="0.9">
+      <stop offset="0%" stop-color="#FFFEFA"/>
+      <stop offset="55%" stop-color="#F1E7D2"/>
+      <stop offset="100%" stop-color="#C2A164"/>
+    </radialGradient>
+  </defs>
+</svg>

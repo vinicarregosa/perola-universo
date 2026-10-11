@@ -1,0 +1,215 @@
+.nav {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--line);
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+  min-height: var(--tap-min);
+  min-width: 0;
+  overflow-wrap: break-word;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+.card:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.feature {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(194, 161, 100, 0.28), transparent 55%),
+    linear-gradient(135deg, var(--wine-950), var(--wine-700));
+  color: var(--cream-100);
+  border-color: rgba(194, 161, 100, 0.4);
+  padding: 1.75rem 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold-500);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 1.3rem + 2vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.cardDesc {
+  font-size: clamp(0.95rem, 0.9rem + 0.5vw, 1rem);
+  line-height: 1.6;
+  opacity: 0.9;
+  overflow-wrap: break-word;
+}
+
+.cta {
+  margin-top: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-500);
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.mediumGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.medium {
+  background: var(--floral-white);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.medium .cardTitle {
+  font-size: clamp(1.3rem, 1.15rem + 1.5vw, 1.6rem);
+  color: var(--wine-900);
+}
+
+.medium .cardDesc {
+  color: var(--muted);
+}
+
+.medium .cta {
+  color: var(--wine-700);
+}
+
+.editorial {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--line);
+  min-height: var(--tap-comfort);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.2s var(--ease-out),
+    padding 0.2s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .row:hover {
+    background: rgba(194, 161, 100, 0.1);
+    padding-left: 1rem;
+  }
+}
+
+.row:active {
+  background: rgba(194, 161, 100, 0.18);
+}
+
+.numeral {
+  flex: none;
+  width: 3rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold-700);
+  letter-spacing: 0.08em;
+}
+
+.rowText {
+  flex: 1;
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.rowTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--wine-900);
+}
+
+.rowDesc {
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+.arrow {
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--wine-700);
+  transition:
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out);
+}
+
+/* Seta como reforço visual — estado ativo garante feedback no tap */
+.row:active .arrow {
+  background: var(--wine-900);
+  color: var(--cream-100);
+  border-color: var(--wine-900);
+}
+
+@media (hover: hover) {
+  .row:hover .arrow {
+    background: var(--wine-900);
+    color: var(--cream-100);
+    border-color: var(--wine-900);
+  }
+}
+
+@media (min-width: 720px) {
+  .mediumGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .feature {
+    padding: 3rem;
+  }
+}
+
+/* Mobile estreito: numeral compacto para dar respiro ao texto */
+@media (max-width: 719px) {
+  .row {
+    gap: 0.75rem;
+  }
+}

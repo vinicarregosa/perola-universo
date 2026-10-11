@@ -1,0 +1,41 @@
+.shell {
+  padding: var(--section-pad) 0;
+  overflow-x: clip;
+}
+
+.tone-cream {
+  background: var(--cream-100);
+  color: var(--ink);
+}
+
+.tone-floral {
+  background: var(--floral-white);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.tone-wine {
+  background: linear-gradient(180deg, var(--wine-950), var(--wine-900));
+  color: var(--cream-100);
+}
+
+.body {
+  margin-top: 2rem;
+}
+
+.back {
+  display: inline-flex;
+}
+
+@media (min-width: 720px) {
+  .shell {
+    padding: 5.5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shell {
+    padding: 6.5rem 0;
+  }
+}

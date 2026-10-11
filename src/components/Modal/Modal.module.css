@@ -1,0 +1,99 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(35, 7, 20, 0.66);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  padding-bottom: calc(1.25rem + var(--safe-b));
+  animation: fade-up 0.3s var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    animation: none;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: min(100% - 1.5rem, 640px);
+  max-height: 90vh;
+  max-height: 90svh;
+  max-height: 90dvh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  background: var(--floral-white);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lift);
+  padding: 3.5rem 1.25rem calc(1.75rem + var(--safe-b));
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: var(--tap-comfort);
+  height: var(--tap-comfort);
+  min-width: var(--tap-comfort);
+  min-height: var(--tap-comfort);
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--cream-100);
+  color: var(--wine-900);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.close:active {
+  background: var(--cream-200);
+  transform: scale(0.96);
+}
+
+@media (hover: hover) {
+  .close:hover {
+    background: var(--cream-200);
+  }
+}
+
+/* Mobile: bottom-sheet — mais perto do polegar, sem depender de hover */
+@media (max-width: 719px) {
+  .overlay {
+    align-items: flex-end;
+    padding: 0.75rem;
+    padding-bottom: calc(0.75rem + var(--safe-b));
+  }
+
+  .dialog {
+    width: min(100% - 1rem, 640px);
+    max-height: 90vh;
+    max-height: 90svh;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+  }
+}
+
+@media (min-width: 720px) {
+  .dialog {
+    padding: 3rem 3rem calc(2.5rem + var(--safe-b));
+  }
+}

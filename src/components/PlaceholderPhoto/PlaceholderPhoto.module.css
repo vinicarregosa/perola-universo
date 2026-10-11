@@ -1,0 +1,49 @@
+.frame {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--cream-200);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(194, 161, 100, 0.16),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #faf5e9, #f1e7d2);
+}
+
+.lily {
+  width: 72px;
+  height: 72px;
+  flex: none;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 26rem;
+  line-height: 1.5;
+}

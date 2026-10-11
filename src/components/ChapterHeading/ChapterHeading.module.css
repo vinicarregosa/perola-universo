@@ -1,0 +1,60 @@
+.wrap {
+  max-width: 46rem;
+}
+
+.align-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+}
+
+.tone-wine .kicker {
+  color: var(--gold-500);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.9rem, 1.5rem + 2.4vw, 3rem);
+  line-height: 1.15;
+  color: var(--wine-900);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.tone-wine .title {
+  color: var(--cream-100);
+}
+
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.12em;
+  color: var(--wine-700);
+  padding-right: 0.08em;
+}
+
+.tone-wine .script {
+  color: var(--gold-500);
+}
+
+.intro {
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 0.95rem + 0.6vw, 1.08rem);
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 42rem;
+  overflow-wrap: break-word;
+}
+
+.tone-wine .intro {
+  color: var(--rose-old-300);
+}

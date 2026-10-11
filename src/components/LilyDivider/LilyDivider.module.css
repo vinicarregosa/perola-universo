@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line),
+    transparent
+  );
+}
+
+.mark {
+  width: 120px;
+  height: 40px;
+  flex: none;
+}

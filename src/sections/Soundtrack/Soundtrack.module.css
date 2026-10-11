@@ -1,0 +1,56 @@
+.wrap {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  min-width: 0;
+}
+
+.vinyl {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  margin-inline: auto;
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-500) 0 10%, var(--wine-950) 11% 14%, #160409 15% 100%),
+    repeating-radial-gradient(circle at 50% 50%, #2b0b19 0 2px, #160409 2px 4px);
+  background-blend-mode: normal;
+  border: 1px solid var(--gold-500);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinyl {
+    animation: none;
+  }
+}
+
+.vinylCore {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fffefa, #f1e7d2 55%, #c2a164);
+  border: 2px solid var(--wine-950);
+  display: block;
+}
+
+.playerWrap {
+  min-width: 0;
+}
+
+@media (min-width: 720px) {
+  .wrap {
+    grid-template-columns: 180px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .vinyl {
+    width: 180px;
+    height: 180px;
+    margin-inline: 0;
+  }
+}
