@@ -10,20 +10,21 @@ export function Diva() {
   const [open, setOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
-  // Detecta public/video/diva.mp4 sem quebrar quando ausente (HEAD silencioso)
+  // Detecta o vídeo configurado em site.ts sem quebrar quando ausente (HEAD silencioso)
   useEffect(() => {
+    if (!c.videoSrc) return;
     let cancelled = false;
-    fetch("/video/diva.mp4", { method: "HEAD" })
+    fetch(c.videoSrc, { method: "HEAD" })
       .then((res) => {
-        if (!cancelled && res.ok) setVideoSrc("/video/diva.mp4");
+        if (!cancelled && res.ok) setVideoSrc(c.videoSrc);
       })
       .catch(() => {
-        /* ausência de vídeo é estado válido — mantém placeholder elegante */
+        /* ausência de vídeo é estado válido — mantém cartão provisório elegante */
       });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [c.videoSrc]);
 
   return (
     <SectionShell
@@ -42,6 +43,9 @@ export function Diva() {
           <blockquote className={styles.quote}>
             <p>{c.letterPreview}</p>
           </blockquote>
+          <p className={styles.guest}>
+            Participação especial — sem pressa para revelar.
+          </p>
           <button
             type="button"
             className="btn btn-wine"
@@ -74,11 +78,15 @@ export function Diva() {
             aria-label="Vídeo da diva misteriosa"
           />
         ) : (
-          <div className={styles.videoPlaceholder} role="img" aria-label="Espaço reservado para o vídeo da diva misteriosa">
+          <div
+            className={styles.videoPlaceholder}
+            role="img"
+            aria-label="Espaço reservado para o vídeo da diva misteriosa"
+          >
             <span className={styles.videoIcon} aria-hidden="true">
               ♡
             </span>
-            <p>O vídeo mora aqui — em breve.</p>
+            <p>{c.fallbackMessage}</p>
           </div>
         )}
         <p className={styles.hint}>{c.videoHint}</p>

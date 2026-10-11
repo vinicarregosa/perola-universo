@@ -5,7 +5,6 @@ interface PlaceholderPhotoProps {
   src?: string;
   alt: string;
   label?: string;
-  aspect?: string;
   eager?: boolean;
   className?: string;
 }
@@ -13,8 +12,7 @@ interface PlaceholderPhotoProps {
 export function PlaceholderPhoto({
   src,
   alt,
-  label = "Espaço para fotografia — ver public/images/README.md",
-  aspect = "4 / 3",
+  label = "Fotografia",
   eager = false,
   className = "",
 }: PlaceholderPhotoProps) {
@@ -57,7 +55,6 @@ export function PlaceholderPhoto({
   return (
     <figure
       className={`${styles.frame} ${className}`}
-      style={{ aspectRatio: aspect }}
       role={showPlaceholder ? "img" : undefined}
       aria-label={showPlaceholder ? `${alt}. ${label}` : undefined}
     >

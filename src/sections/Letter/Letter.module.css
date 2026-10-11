@@ -17,6 +17,7 @@
   justify-items: start;
   position: relative;
   min-width: 0;
+  max-width: 100%;
 }
 
 .drop {
@@ -38,37 +39,30 @@
   overflow-wrap: break-word;
 }
 
-.modalKicker {
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-700);
-}
-
-.modalTitle {
-  margin: 0;
-  font-size: clamp(1.5rem, 1.3rem + 2vw, 1.9rem);
+.fullTitle {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.3rem, 1.15rem + 1.2vw, 1.6rem);
   color: var(--wine-900);
-  font-family: var(--font-serif);
-  line-height: 1.25;
-  overflow-wrap: break-word;
 }
 
+/* Leitura excelente no celular: 65ch, espaçamento generoso, fonte serifada */
 .full {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   background: var(--cream-100);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 1.1rem;
+  padding: 1.25rem 1.1rem;
   min-width: 0;
+  width: 100%;
+  max-width: 65ch;
 }
 
 .full p {
   margin: 0;
-  line-height: 1.8;
+  font-size: clamp(1.02rem, 0.97rem + 0.5vw, 1.1rem);
+  line-height: 1.85;
+  letter-spacing: 0.005em;
   color: var(--ink);
   max-width: 65ch;
   overflow-wrap: break-word;
@@ -87,8 +81,30 @@
 .signature {
   margin: 0;
   font-family: var(--font-script);
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 1.4rem + 1vw, 1.9rem);
+  line-height: 1.4;
   color: var(--wine-700);
+}
+
+.saveWrap {
+  display: grid;
+  justify-items: start;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 65ch;
+}
+
+.saved {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: var(--cream-100);
+  border: 1px solid var(--gold-500);
+  border-radius: var(--radius-md);
+  color: var(--wine-900);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  box-shadow: var(--shadow-soft);
 }
 
 @media (min-width: 720px) {
@@ -97,6 +113,7 @@
   }
 
   .full {
-    padding: 1.5rem;
+    padding: 2rem;
+    gap: 1.4rem;
   }
 }

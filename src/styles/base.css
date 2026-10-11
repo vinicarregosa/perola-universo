@@ -67,9 +67,10 @@ audio {
 video {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   background: #000;
+  display: block;
 }
 
 a {

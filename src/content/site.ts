@@ -1,214 +1,380 @@
 import type { SiteContent } from "./types";
 
 /**
- * TODO DE CONTEÚDO — todos os textos abaixo são provisórios.
- * Procure por "[EDITAR]" e substitua pelos textos, fotos, áudio e vídeo reais.
- * Nenhum fato pessoal foi inventado: use rascunhos curtos e elegantes.
+ * Conteúdo — Pérola Universo.
+ * Textos curtos, diretos, sem inventar lembranças/datas.
+ * Letter.full preservada exatamente como recebida.
+ * Fotos/músicas/vídeo configuráveis pelos caminhos abaixo.
  */
 export const site: SiteContent = {
   meta: {
     title: "Um universo só nosso — Para a Pérola",
     description:
-      "[EDITAR] Site de aniversário romântico — um universo só nosso, feito para a Pérola.",
+      "Site de aniversário para a Pérola, feito pelo namorado. 12 de outubro.",
   },
 
   opening: {
-    eyebrow: "[EDITAR] 12 de outubro — aniversário da minha Pérola",
-    title: "Um universo só nosso",
-    subtitle:
-      "[EDITAR] Texto provisório: uma porta de entrada delicada para celebrar você — com calma, com carinho e com um abraço que atravessa a distância.",
-    ctaPortal: "Entrar no portal",
-    ctaLetter: "Ir direto à carta",
-    bgImage: "/images/abertura/hero.jpg",
-    bgAlt: "[EDITAR] Fotografia do casal para o fundo da abertura",
+    eyebrow: "12 de outubro — aniversário da Ma",
+    title: "Um universo só nosso.",
+    subtitle: "Para a minha Pérola, no dia dela.",
+    ctaPortal: "Ver o portal",
+    ctaLetter: "Ler a carta",
+    bgImage: "/images/abertura/principal.jpeg",
+    bgAlt: "",
+    photo: "/images/abertura/principal.jpeg",
+    photoAlt: "Ma e eu juntos",
+    photoCaption: "Nós dois.",
   },
 
   portal: {
-    title: "O portal",
-    intro:
-      "[EDITAR] Texto provisório: escolha por onde começar. Cada capítulo guarda um pedacinho do que você significa — sem pressa, na ordem que o coração pedir.",
+    title: "Por onde começar",
+    intro: "Escolhe por onde começar. Sem ordem certa, sem pressa.",
     items: [
       {
-        href: "#carta",
-        title: "Carta",
-        description:
-          "[EDITAR] A carta completa, como num diário guardado a sete chaves.",
+        href: "#distancia",
+        title: "Distância",
+        description: "O abraço que está me devendo",
+        icon: "🧸",
+      },
+      {
+        href: "#referencias",
+        title: "Referências",
+        description: "Algumas histórias têm um pouco da gente",
+        icon: "📺",
       },
       {
         href: "#cinema",
         title: "Cinema",
-        description:
-          "[EDITAR] Nossas maratonas comentadas — do drama de época à comédia policial.",
+        description: "Três relatos com imagem e texto",
+        icon: "🎬",
       },
       {
-        href: "#pets",
-        title: "Snow & Pedro",
-        description:
-          "[EDITAR] Recados assinados pelos nossos guardiões de quatro patas.",
+        href: "#viagens",
+        title: "Viagens",
+        description: "Lugares onde já estivemos juntos",
+        icon: "🧳",
       },
       {
-        href: "#distancia",
-        title: "Distância",
-        description: "[EDITAR] A saudade explicada sem tristeza — só abraço.",
-      },
-      {
-        href: "#universo",
-        title: "Universo",
-        description:
-          "[EDITAR] Pequenos mundos da Pérola: do cuidado à leitura.",
+        href: "#galeria",
+        title: "Galeria",
+        description: "Provas de que a gente existe fora da saudade",
+        icon: "📷",
       },
       {
         href: "#diva",
-        title: "Diva misteriosa",
-        description: "[EDITAR] Uma carta selada e um vídeo guardado.",
+        title: "Diva",
+        description: "Uma participação especial",
+        icon: "✦",
       },
       {
         href: "#enfermagem",
-        title: "Prontuário do amor",
-        description: "[EDITAR] Diagnóstico oficial: saudade aguda de abraço.",
+        title: "Enfermagem",
+        description: "Departamento de Enfermagem da Saudade",
+        icon: "⚕",
+      },
+      {
+        href: "#pets",
+        title: "Pets",
+        description: "Snow e Pedro",
+        icon: "🐾",
+      },
+      {
+        href: "#carta",
+        title: "Carta",
+        description: "Uma coisa que quero te dizer",
+        icon: "💌",
       },
       {
         href: "#trilha",
-        title: "Trilha sonora",
-        description: "[EDITAR] Aperte o play e leia com música.",
-      },
-      {
-        href: "#final",
-        title: "Final",
-        description: "[EDITAR] O fecho: a distância não diminui o vínculo.",
+        title: "Trilha",
+        description: "Músicas que têm a nossa cara",
+        icon: "🎵",
       },
     ],
+    featuredTitle: "Um pouco de nós",
+    featuredPhotos: [
+      { src: "/images/galeria/ubatuba.jpeg", alt: "Nós dois em Ubatuba" },
+      { src: "/images/galeria/fotoscampos.jpeg", alt: "Nós dois em Campos do Jordão" },
+      { src: "/images/galeria/fotos4.jpeg", alt: "Nós dois juntos" },
+    ],
+    galleryLinkLabel: "Ver nossas fotografias",
   },
 
   distance: {
-    kicker: "Capítulo I",
-    title: "A nossa distância, o nosso abraço",
+    kicker: "Distância",
+    title: "Falta um abraço aqui",
     scriptAccent: "abraço",
-    intro:
-      "[EDITAR] Texto provisório: a distância existe no mapa, não no cuidado.",
+    intro: "A gente se vê espaçado. Quando se vê, compensa.",
     paragraphs: [
-      "[EDITAR] Texto provisório: sentir saudade é só o coração confirmando o endereço — ele mora onde você está.",
-      "[EDITAR] Texto provisório: a gente transforma quilômetro em mensagem boa, chamada demorada e plano bonito para o próximo encontro.",
-      "[EDITAR] Texto provisório: nada de tristeza grande aqui. É saudade boa, dessas que fazem sorrir no meio do dia.",
+      "Ma, a distância é simples: moramos longe e nos vemos de tempos em tempos. No meio disso, mensagem durante o dia e ligação à noite.",
+      "O resto fica para o reencontro. Tem um abraço e beijo me devendo — quero cobrar com juros.",
     ],
-    image: "/images/distancia/abraco.jpg",
-    imageAlt: "[EDITAR] Fotografia simbólica do abraço à distância",
-    badge: "[EDITAR] abraço de urso — válido para sempre",
-    hugButton: "Quero meu abraço de urso",
-    hugMessage:
-      "[EDITAR] Texto provisório: considerando entregue — um abraço de urso bem apertado, com direito a rodopio lento e promessa de repeteco em breve. 🤍",
+    image: "/images/galeria/fotos1.jpeg",
+    imageAlt: "Nós dois juntos",
+    imageCaption: "Esse abraço aí.",
+    badge: "vale-abraço sem validade",
+    hugButton: "Cobrar o abraço",
+    hugAnother: "Quero outro",
+    hugMessage: "Abraço entregue. Bem apertado, como combinado.",
+    hugMessages: [
+      "Abraço entregue. Bem apertado, como combinado.",
+      "Mais um: esse vale para a ligação de hoje à noite.",
+      "Último por agora — o resto fica para o reencontro.",
+    ],
+    hugReset: "Guardar para depois",
   },
 
   universe: {
-    kicker: "Capítulo II",
-    title: "O universo da minha Pérola",
-    scriptAccent: "Pérola",
-    intro:
-      "[EDITAR] Texto provisório: não é catálogo, é constelação — quatro brilhos que eu amo observar em você. Toque em cada um para revelar.",
+    kicker: "A Ma",
+    title: "O que faz a Ma ser a Ma",
+    scriptAccent: "Ma",
+    intro: "Quatro coisas tuas que eu reparo bastante.",
     qualities: [
       {
-        title: "[EDITAR] Maquiagem",
-        short: "[EDITAR] O ritual que vira arte.",
+        title: "Maquiagem",
+        short: "Ela manja. Eu assisto.",
         revealed:
-          "[EDITAR] Texto provisório: você se maquia como quem pinta o dia — com calma, com capricho, e o espelho devolve o que já estava lá: beleza com intenção.",
+          "A Ma entende de maquiagem de verdade. Eu entendo de segurar a luz e dizer “ficou bom”. Cada um com seu talento.",
+        photo: "/images/universo/maquiagem.jpg",
+        photoAlt: "Ma se maquiando",
+        photoCaption: "O ritual dela.",
       },
       {
-        title: "[EDITAR] Lírios",
-        short: "[EDITAR] Delicadeza com presença.",
+        title: "Lírios",
+        short: "Os favoritos dela.",
         revealed:
-          "[EDITAR] Texto provisório: lírios são elegantes sem pedir licença — iguais a você entrando numa sala e iluminando sem esforço.",
+          "Quando vejo lírios por aí, lembro dela na hora. Sem muito mistério.",
+        photo: "/images/universo/lirios.jpg",
+        photoAlt: "Lírios",
+        photoCaption: "Lírios — os favoritos dela.",
       },
       {
-        title: "[EDITAR] Leitura",
-        short: "[EDITAR] Mundos dentro do mundo.",
+        title: "Livros",
+        short: "Duas escolhas para a estante.",
         revealed:
-          "[EDITAR] Texto provisório: você lê e o tempo desacelera. Admiro como cada história encontra morada na sua imaginação generosa.",
+          "Dei esses dois para ela: um romance e um suspense, para ela escolher o ritmo. Espero os comentários depois.",
       },
       {
-        title: "[EDITAR] Enfermagem",
-        short: "[EDITAR] Cuidar como vocação.",
+        title: "Enfermagem",
+        short: "O técnico e a paciência.",
         revealed:
-          "[EDITAR] Texto provisório: seu cuidado é técnica e ternura ao mesmo tempo. Quem cruza seu plantão recebe mais do que assistência: recebe acolhimento.",
+          "Ela está no técnico de enfermagem e leva a sério. Eu só observo e aprendo onde fica o termômetro.",
       },
     ],
+    booksTitle: "Dois presentes",
+    booksIntro:
+      "Comprei esses dois para ela. As capas aparecem aqui quando eu fotografar.",
+    books: [
+      {
+        title: "Para Sir Phillip, Com Amor",
+        author: "Julia Quinn",
+        cover: "/images/universo/sir-phillip.jpg",
+        coverAlt: "Capa do livro Para Sir Phillip, Com Amor, de Julia Quinn",
+        note: "Presente — para ler sem pressa.",
+      },
+      {
+        title: "A Paciente Silenciosa",
+        author: "Alex Michaelides",
+        cover: "/images/universo/paciente-silenciosa.jpg",
+        coverAlt: "Capa do livro A Paciente Silenciosa, de Alex Michaelides",
+        note: "Presente — para ler devagar.",
+      },
+    ],
+  },
+
+  referencias: {
+    kicker: "Referências",
+    title: "Um pouco da gente nas histórias",
+    scriptAccent: "gente",
+    intro: "Fotografias nossas.",
+    items: [
+      {
+        id: "escandalo",
+        photo: "/images/galeria/fotos2.jpeg",
+        photoAlt: "Nós dois juntos",
+      },
+      {
+        id: "sem-explicar",
+        photo: "/images/galeria/fotos3.jpeg",
+        photoAlt: "Nós dois juntos",
+      },
+      {
+        id: "do-nosso-jeito",
+        photo: "/images/galeria/fotos4.jpeg",
+        photoAlt: "Nós dois em uma viagem",
+      },
+    ],
+    tripsLinkLabel: "Ver nossas viagens",
   },
 
   cinema: {
-    kicker: "Capítulo III",
+    kicker: "Cinema",
     title: "Nosso cinema particular",
     scriptAccent: "cinema",
     intro:
-      "[EDITAR] Texto provisório: cinco sessões comentadas por nós dois. Toque em cada título para abrir a resenha afetiva — humor original, sem spoilers alheios.",
+      "Três sessões comentadas por nós dois. Toque em cada título para abrir a resenha afetiva — humor original, sem spoilers alheios.",
     items: [
       {
-        title: "Bridgerton",
-        tag: "[EDITAR] carta da alta sociedade",
-        teaser: "[EDITAR] Fofocas, bailes e olhares que dizem tudo.",
+        id: "baile",
+        title: "Relato 1 — O baile",
+        tag: "carta da alta sociedade",
+        teaser: "Fofocas, bailes e olhares que dizem tudo.",
         revealed:
-          "[EDITAR] Texto provisório humorístico original: por este meio, esta autora declara que qualquer baile empalidece diante do nosso sofá — onde o par é certo, a pipoca é farta e o par romântico nunca atrasa.",
+          "Por este meio, esta autora declara que qualquer baile empalidece diante do nosso sofá — onde o par é certo, a pipoca é farta e o par romântico nunca atrasa.",
+        image: "/images/cinema/bridgerton.jpeg",
+        imageAlt: "Imagem ilustrativa do relato do baile",
       },
       {
-        title: "Brooklyn Nine-Nine",
-        tag: "[EDITAR] relatório policial",
-        teaser: "[EDITAR] Caso arquivado: saudade em excesso.",
+        id: "caso-99",
+        title: "Caso nº 2",
+        tag: "relatório policial",
+        teaser: "Caso arquivado: saudade em excesso.",
         revealed:
-          "[EDITAR] Texto provisório humorístico original: boletim de ocorrência afetiva — vítima: um namorado; causa: saudade em excesso após maratona; providência: abraço de urso imediato e reprise do episódio favorito lado a lado.",
+          "Boletim de ocorrência afetiva — vítima: um namorado; causa: saudade em excesso após maratona; providência: abraço de urso imediato e reprise do episódio favorito lado a lado.",
+        image: "/images/cinema/99.jpeg",
+        imageAlt: "Imagem ilustrativa do caso nº 2",
       },
       {
-        title: "Avatar",
-        tag: "[EDITAR] conexão à distância",
-        teaser: "[EDITAR] A nossa própria árvore das vozes.",
+        id: "riso",
+        title: "Relato 3 — Riso solto",
+        tag: "sessão riso solto",
+        teaser: "Lives, jogos e comentários impossíveis.",
         revealed:
-          "[EDITAR] Texto provisório humorístico original: dizem que os Na'vi se conectam pela trança — nós nos conectamos pelo bom e velho 'ficou acordada até tarde só para terminar o episódio comigo'. Conexão estabelecida com sucesso.",
-      },
-      {
-        title: "Brino",
-        tag: "[EDITAR] sessão riso solto",
-        teaser: "[EDITAR] Lives, jogos e comentários impossíveis.",
-        revealed:
-          "[EDITAR] Texto provisório humorístico original: ver Brino com você é terapia do riso — pausamos, rebobinamos a piada e rimos de novo, porque alegria boa é alegria compartilhada.",
-      },
-      {
-        title: "Felipe Neto",
-        tag: "[EDITAR] sessão comentada",
-        teaser: "[EDITAR] Opiniões fortes e sofá macio.",
-        revealed:
-          "[EDITAR] Texto provisório humorístico original: entre um vídeo e outro, a melhor parte nem está na tela — está no seu comentário afiado logo depois, que sempre rende a nossa própria versão do assunto.",
+          "Ver Brino com você é terapia do riso — pausamos, rebobinamos a piada e rimos de novo, porque alegria boa é alegria compartilhada.",
+        image: "/images/cinema/brino.jpeg",
+        imageAlt: "Imagem ilustrativa do relato do riso solto",
       },
     ],
   },
 
-  diva: {
-    kicker: "Capítulo IV",
-    title: "A diva misteriosa",
-    scriptAccent: "misteriosa",
+  trips: {
+    kicker: "Viagens",
+    title: "Lugares onde já estivemos juntos",
+    scriptAccent: "juntos",
     intro:
-      "[EDITAR] Texto provisório: há capítulos que se guardam com lacre. Este é um deles — uma carta selada e um vídeo à espera do momento certo.",
+      "Tem lugar que a gente visita e lugar que depois acaba lembrando. Separei algumas fotografias das nossas viagens para deixar esses momentos reunidos aqui.",
+    items: [
+      {
+        id: "ubatuba",
+        name: "Ubatuba",
+        caption: "Um daqueles dias que merecem ficar guardados.",
+        photo: "/images/galeria/ubatuba.jpeg",
+        photoAlt: "Nós dois em Ubatuba",
+      },
+      {
+        id: "campos",
+        name: "Campos do Jordão",
+        caption: "Mais uma lembrança nossa.",
+        photo: "/images/galeria/fotoscampos.jpeg",
+        photoAlt: "Nós dois em Campos do Jordão",
+      },
+      {
+        id: "aguas",
+        name: "Águas",
+        caption: "Um lugar nosso.",
+        photo: "/images/galeria/fotosaguas.jpeg",
+        photoAlt: "Nós dois em Águas",
+      },
+    ],
+  },
+
+  gallery: {
+    kicker: "Galeria",
+    title: "Provas de que a gente existe fora da saudade",
+    scriptAccent: "saudade",
+    intro:
+      "Algumas fotografias são de viagens, outras de momentos comuns. Juntas, elas guardam um pouco do que já vivemos.",
+    images: [
+      {
+        src: "/images/galeria/ubatuba.jpeg",
+        alt: "Nós dois em Ubatuba",
+        caption: "Ubatuba",
+        location: "Ubatuba",
+      },
+      {
+        src: "/images/galeria/fotoscampos.jpeg",
+        alt: "Nós dois em Campos do Jordão",
+        caption: "Campos do Jordão",
+        location: "Campos do Jordão",
+      },
+      {
+        src: "/images/galeria/fotosaguas.jpeg",
+        alt: "Nós dois em Águas",
+        caption: "Águas",
+        location: "Águas",
+      },
+      {
+        src: "/images/galeria/fotos1.jpeg",
+        alt: "Nós dois juntos",
+        caption: "Nós dois",
+      },
+      {
+        src: "/images/abertura/principal.jpeg",
+        alt: "Ma e eu juntos",
+        caption: "Nós dois",
+      },
+      {
+        src: "/images/galeria/fotos2.jpeg",
+        alt: "Nós dois juntos",
+        caption: "Nós dois",
+      },
+      {
+        src: "/images/galeria/fotos3.jpeg",
+        alt: "Nós dois na praia",
+        caption: "Praia",
+      },
+      {
+        src: "/images/galeria/fotos4.jpeg",
+        alt: "Nós dois juntos",
+        caption: "Nós dois",
+      },
+      {
+        src: "/images/galeria/fotoaparecida.jpeg",
+        alt: "Nós dois em Aparecida",
+        caption: "Aparecida",
+        location: "Aparecida",
+      },
+    ],
+    emptyNote: "As fotos entram aqui — por enquanto, esse espaço fica reservado.",
+    openLabel: "Ampliar fotografia",
+    closeLabel: "Fechar",
+    prevLabel: "Fotografia anterior",
+    nextLabel: "Próxima fotografia",
+  },
+
+  diva: {
+    kicker: "Diva",
+    title: "Uma participação especial",
+    scriptAccent: "especial",
+    intro: "Um espaço reservado para uma participação especial.",
     letterPreview:
-      "[EDITAR] Texto provisório: 'Para a aniversariante mais elegante deste universo: este selo guarda uma surpresa que só se abre com o coração…'",
-    openButton: "Abrir a carta misteriosa",
-    modalTitle: "[EDITAR] A carta misteriosa da diva",
+      "“Para a aniversariante: este selo guarda uma surpresa feita com carinho.”",
+    openButton: "Abrir a surpresa",
+    modalTitle: "Participação especial",
     modalBody:
-      "[EDITAR] Texto provisório: aqui mora a homenagem em vídeo — ou, enquanto ele não chega, esta mensagem escrita com carinho vale como trailer do que está por vir.",
-    videoHint:
-      "[EDITAR] Como substituir: exporte o vídeo em MP4 (até 50 MB), salve como public/video/diva.mp4 e ele aparecerá aqui automaticamente. Sem o arquivo, esta mensagem elegante continua no lugar — nada quebra.",
+      "Guardei este espaço para uma homenagem. Enquanto ela não chega, fica aqui o convite: volte depois para conferir.",
+    videoSrc: "/images/diva/WhatsApp%20Video%202026-10-11%20at%2002.33.49.mp4",
+    fallbackMessage: "A surpresa mora aqui — em breve.",
+    videoHint: "O vídeo aparece aqui quando estiver pronto.",
     closeButton: "Fechar",
   },
 
   nursing: {
-    kicker: "Capítulo V",
-    title: "Prontuário do amor",
-    scriptAccent: "amor",
-    intro:
-      "[EDITAR] Texto provisório: documento oficial do plantão do coração — carimbado pela enfermeira mais amada deste universo.",
-    patient: "[EDITAR] Paciente: namorado com saudade — admissão por carência de abraço",
-    diagnosis:
-      "[EDITAR] Diagnóstico: necessidade aguda de abraço de urso, com crises de vontade de ligar só para ouvir a voz",
-    treatment:
-      "[EDITAR] Tratamento: contato diário com a Pérola, dose generosa de mensagens boas, 1 chamada demorada à noite e abraço presencial assim que possível",
-    prognosis:
-      "[EDITAR] Prognóstico: melhora imediata após contato com a Pérola; cura completa prevista para o próximo encontro",
-    note: "[EDITAR] Assinado e carimbado com amor pela Enfermeira Pérola 🤍",
+    kicker: "Enfermagem",
+    title: "Departamento de Enfermagem da Saudade",
+    scriptAccent: "Saudade",
+    intro: "Um prontuário de brincadeira, carimbado pela futura técnica.",
+    patient: "Paciente: Ma e eu — queixa de saudade",
+    diagnosis: "Quadro: saudade de abraço, com vontade de ligar só para ouvir a voz",
+    treatment: "Conduta: mensagem durante o dia, ligação à noite e abraço no reencontro",
+    prognosis: "Evolução: melhora quando a gente se fala; alta no próximo encontro",
+    note: "Assinado pela futura técnica Pérola",
+    fictionBadge: "brincadeira — nada aqui é de verdade",
+    prescribeButton: "Prescrever um abraço",
+    prescriptionTitle: "Receita",
+    prescription:
+      "1 abraço sem validade, ligações sem pressa e 1 reencontro com rodopio.",
+    prescriptionNote: "Repetir quando a saudade apertar.",
   },
 
   pets: {
@@ -216,73 +382,81 @@ export const site: SiteContent = {
     title: "Snow & Pedro em missão",
     scriptAccent: "missão",
     intro:
-      "[EDITAR] Texto provisório: correspondência oficial do reino animal — entregue sem atraso, com bigodes e patas.",
+      "Correspondência oficial do reino animal — entregue sem atraso, com bigodes e patas.",
     cards: [
       {
         name: "Snow",
-        role: "[EDITAR] chow chow guardião",
+        role: "chow chow guardião",
         message:
-          "[EDITAR] Texto provisório (como se fosse da Snow): 'Au-au. Vigiei a casa direitinho e guardei o melhor lugar do sofá para vocês dois. Parabéns, humana favorita!'",
-        image: "/images/pets/snow.jpg",
-        imageAlt: "[EDITAR] Fotografia da Snow, a chow chow",
+          "Au-au. Vigiei a casa direitinho e guardei o melhor lugar do sofá para vocês dois. Parabéns, humana favorita!",
+        image: "/images/pets/snow.jpeg",
+        imageAlt: "Fotografia da Snow, a chow chow",
       },
       {
         name: "Pedro",
-        role: "[EDITAR] gato estrategista",
+        role: "gato estrategista",
         message:
-          "[EDITAR] Texto provisório (como se fosse do Pedro): 'Miau. Derrubei exatamente zero copos esta semana em sua homenagem. Isso é amor em linguagem felina. Parabéns!'",
-        image: "/images/pets/pedro.jpg",
-        imageAlt: "[EDITAR] Fotografia do Pedro, o gato",
+          "Miau. Derrubei exatamente zero copos esta semana em sua homenagem. Isso é amor em linguagem felina. Parabéns!",
+        image: "/images/pets/pedro.jpeg",
+        imageAlt: "Fotografia do Pedro, o gato",
       },
     ],
     birthdayMessage:
-      "[EDITAR] Texto provisório: parabéns do fundo dos nossos coraçõezinhos peludos — que nunca faltem petiscos, sonecas ao sol e humanos que amam você como nós amamos.",
-    birthdaySignature: "[EDITAR] Assinado com patas: Snow & Pedro 🐾",
+      "Parabéns do fundo dos nossos coraçõezinhos peludos — que nunca faltem petiscos, sonecas ao sol e humanos que amam você como nós amamos.",
+    birthdaySignature: "Assinado com patas: Snow & Pedro 🐾",
   },
 
   letter: {
-    kicker: "Capítulo VII",
-    title: "Carta para a minha Pérola",
-    scriptAccent: "Pérola",
-    intro:
-      "[EDITAR] Texto provisório: guardei o essencial aqui fora e o transbordamento lá dentro. Abra com calma.",
-    preview:
-      "[EDITAR] Texto provisório (prévia curta): 'Se este site fosse o mar, esta carta seria a pérola — pequena por fora, imensa por dentro…'",
+    kicker: "Carta",
+    title: "Uma coisa que quero te dizer",
+    scriptAccent: "dizer",
+    intro: "A carta está aqui, inteira. Lê com calma.",
+    preview: "“Ma, feliz aniversário — o resto está na carta.”",
     openButton: "Ler a carta completa",
     full: [
-      "[EDITAR] Texto provisório §1: Querida Pérola, começo pelo óbvio — feliz aniversário. Que este 12 de outubro seja leve, com cheiro de lírio e gosto de começo bonito.",
-      "[EDITAR] Texto provisório §2: A distância me ensinou uma aritmética nova: quanto mais sinto sua falta, mais tenho certeza do lugar onde quero estar.",
-      "[EDITAR] Texto provisório §3: Admiro seu cuidado, sua fé no dia seguinte, seu jeito de transformar rotina em ritual — do café à leitura, da maquiagem ao plantão.",
-      "[EDITAR] Texto provisório §4: Prometo o simples que sustenta o grande: presença atenta, humor nos dias cinzentos e abraços de urso sem data de validade.",
-      "[EDITAR] Texto provisório §5: Fecha os olhos e imagina: eu, você, Snow disputando o sofá e Pedro julgando tudo de cima do armário. Esse é o meu para sempre favorito.",
+      "Ma, feliz aniversário. Hoje, 12 de outubro, o calendário faz o favor de lembrar o óbvio: o mundo ficou melhor no dia em que você chegou.",
+      "De longe, aprendi a te amar em detalhes pequenos. No lírio que me faz parar na floricultura, no pincel fora do lugar que me arranca um sorriso, na notificação de mensagem sua que muda o ritmo do meu dia.",
+      "Admiro você de um jeito inteiro: o capricho da maquiagem, a calma da leitura, a vocação do cuidado. Ver você no caminho do técnico de enfermagem me dá um orgulho que não cabe em mensagem curta — é técnica e ternura na mesma pessoa.",
+      "A distância existe, não vou fingir que não. Ela pesa em dia comum e aperta em data bonita. Mas ela nunca foi maior que nós: virou chamada longa, virou plano, virou contagem para o próximo encontro — esses reencontros a cada seis meses, mais ou menos, que viram feriado particular.",
+      "E tem a nossa trupe: Snow guardando o sofá como quem guarda tesouro, Pedro julgando tudo lá de cima com sua sabedoria felina. Minha imagem favorita tem esse cenário — você rindo, eu do seu lado, eles disputando atenção.",
+      "Então é isso, minha Pérola: que este novo ano venha leve, com saúde, com histórias boas para ler e com gente que te ama por perto — eu na primeira fila. Come um pedaço de bolo por mim, faz um pedido bonito e guarda este cantinho aqui para quando a saudade bater.",
     ],
-    signature: "[EDITAR] Com todo o meu amor — seu namorado 🤍",
+    signature: "Com todo o meu amor — seu namorado 🤍",
     closeButton: "Fechar carta",
+    saveButton: "Guardar para depois",
+    savedMessage: "Guardado. Volta aqui quando a saudade bater.",
   },
 
   soundtrack: {
-    kicker: "Capítulo VIII",
-    title: "Nossa trilha sonora",
-    scriptAccent: "trilha",
-    intro:
-      "[EDITAR] Texto provisório: aperte o play e leia o resto com música. Sem autoplay — o momento é seu.",
-    audioSrc: "/audio/trilha.mp3",
-    trackTitle: "[EDITAR] Nossa música — título provisório",
-    trackArtist: "[EDITAR] Artista provisório",
-    transcript:
-      "[EDITAR] Transcrição/legendas provisórias: descreva aqui o clima da faixa para quem não puder ouvir — ex.: 'balada suave, violão e voz doce, refrão que abraça'.",
+    kicker: "Trilha",
+    title: "Músicas que têm a nossa cara",
+    scriptAccent: "cara",
+    intro: "Aperta o play quando quiser. Sem autoplay.",
+    audioSrc: "/audio/eu-te-seguro---panda-sem-moderação-2.mp3",
+    trackTitle: "Eu te seguro",
+    trackArtist: "Panda",
+    transcript: "Uma faixa calma para acompanhar a leitura.",
+    tracks: [
+      {
+        src: "/audio/eu-te-seguro---panda-sem-moderação-2.mp3",
+        title: "Eu te seguro",
+        artist: "Panda",
+      },
+    ],
+    links: [],
+    fallbackNote: "Sem música por enquanto.",
   },
 
   finale: {
-    title: "A distância não nos diminui",
-    scriptAccent: "diminui",
+    title: "Até o próximo abraço",
+    scriptAccent: "abraço",
     message:
-      "[EDITAR] Texto provisório: fechamos este universo com a certeza que o abriu — a distância mede quilômetros, nunca vínculo. Feliz aniversário, minha Pérola. O próximo capítulo a gente escreve juntinhos.",
+      "Ma, feliz aniversário. Guarda um abraço para mim até o próximo encontro.",
     ctaPortal: "Voltar ao portal",
   },
 
   footer: {
-    line: "[EDITAR] Feito com amor para a Pérola — 12 de outubro 🤍",
+    line: "Para a Pérola — 12 de outubro",
     backToTop: "Voltar ao topo",
   },
 };

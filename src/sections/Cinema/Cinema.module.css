@@ -129,6 +129,29 @@
   padding: 0 1rem 1.25rem 1rem;
 }
 
+/* Conteúdo do painel: imagem pequena + texto anterior */
+.panelContent {
+  display: grid;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.thumb {
+  width: 120px;
+  max-width: 40vw;
+  min-width: 0;
+  background: var(--cream-200);
+  border-radius: var(--radius-md);
+}
+
+/* Miniatura do cinema: foto inteira, sem corte */
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .revealed {
   margin: 0;
   padding: 1.1rem 1.2rem;
@@ -140,6 +163,7 @@
   line-height: 1.7;
   overflow-wrap: break-word;
   animation: fade-up 0.4s var(--ease-out);
+  min-width: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -156,5 +180,16 @@
 
   .panel {
     padding: 0 1.5rem 1.5rem 5.1rem;
+  }
+
+  .panelContent {
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .thumb {
+    width: 160px;
+    max-width: none;
   }
 }

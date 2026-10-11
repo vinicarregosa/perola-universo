@@ -2,6 +2,18 @@ import { site } from "../../content/site";
 import { Reveal } from "../../components/Reveal/Reveal";
 import styles from "./Finale.module.css";
 
+function withAccent(title: string, accent: string) {
+  const idx = title.toLowerCase().indexOf(accent.toLowerCase());
+  if (!accent || idx === -1) return <>{title}</>;
+  return (
+    <>
+      {title.slice(0, idx)}
+      <span className={styles.script}>{title.slice(idx, idx + accent.length)}</span>
+      {title.slice(idx + accent.length)}
+    </>
+  );
+}
+
 export function Finale() {
   const c = site.finale;
 
@@ -14,8 +26,7 @@ export function Finale() {
               ◯
             </p>
             <h2 id="final-titulo" className={styles.title}>
-              A distância não nos{" "}
-              <span className={styles.script}>{c.scriptAccent}</span>
+              {withAccent(c.title, c.scriptAccent)}
             </h2>
             <p className={styles.message}>{c.message}</p>
             <div className={styles.ctas}>

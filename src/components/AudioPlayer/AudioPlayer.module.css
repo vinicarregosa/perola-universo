@@ -50,6 +50,12 @@
   }
 }
 
+.play:disabled {
+  opacity: 0.55;
+  cursor: default;
+  transform: none;
+}
+
 .meta {
   flex: 1;
   min-width: 0;

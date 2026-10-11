@@ -8,7 +8,7 @@ export function Opening() {
   const c = site.opening;
   const [bgReady, setBgReady] = useState(false);
 
-  // HEAD antes do <img>: evita 404 no console quando hero.jpg ainda não existe.
+  // HEAD antes do <img>: evita 404 no console quando a foto ainda não existe.
   useEffect(() => {
     if (!c.bgImage) return;
     let cancelled = false;
@@ -17,7 +17,7 @@ export function Opening() {
         if (!cancelled && res.ok) setBgReady(true);
       })
       .catch(() => {
-        /* sem foto real → placeholder elegante continua; nada quebra */
+        /* sem foto real → fundo liso continua; nada quebra */
       });
     return () => {
       cancelled = true;
@@ -39,24 +39,13 @@ export function Opening() {
           onError={() => setBgReady(false)}
         />
       ) : null}
-      {/* Foto decorativa de fundo — PlaceholderPhoto visível garante layout elegante sem arquivo real */}
-      <div className={styles.bgFallback} aria-hidden="true">
-        <PlaceholderPhoto
-          src=""
-          alt=""
-          label=""
-          aspect="16 / 9"
-          eager
-          className={styles.bgPlaceholder}
-        />
-      </div>
       <div className={styles.scrim} aria-hidden="true" />
 
       <div className={`container ${styles.inner}`}>
-        <Reveal>
+        <Reveal className={styles.text}>
           <p className={styles.eyebrow}>{c.eyebrow}</p>
           <h1 id="abertura-titulo" className={styles.title}>
-            Um universo <span className={styles.script}>só nosso</span>
+            {c.title}
           </h1>
           <p className={styles.subtitle}>{c.subtitle}</p>
           <div className={styles.ctas}>
@@ -67,6 +56,18 @@ export function Opening() {
               {c.ctaLetter}
             </a>
           </div>
+        </Reveal>
+        <Reveal className={styles.photoWrap} delayMs={120}>
+          <figure className={styles.photoCard}>
+            <PlaceholderPhoto
+              src={c.photo}
+              alt={c.photoAlt}
+              label="Nossa fotografia principal — em breve aqui"
+              eager
+              className={styles.photo}
+            />
+            <figcaption className={styles.caption}>{c.photoCaption}</figcaption>
+          </figure>
         </Reveal>
         <a
           className={styles.scrollHint}

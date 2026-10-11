@@ -1,8 +1,10 @@
 import { Opening } from "./sections/Opening/Opening";
 import { Portal } from "./sections/Portal/Portal";
 import { Distance } from "./sections/Distance/Distance";
-import { Universe } from "./sections/Universe/Universe";
+import { Referencias } from "./sections/Referencias/Referencias";
 import { Cinema } from "./sections/Cinema/Cinema";
+import { Trips } from "./sections/Trips/Trips";
+import { Gallery } from "./sections/Gallery/Gallery";
 import { Diva } from "./sections/Diva/Diva";
 import { Nursing } from "./sections/Nursing/Nursing";
 import { Pets } from "./sections/Pets/Pets";
@@ -22,8 +24,10 @@ function App() {
       <main>
         <Portal />
         <Distance />
-        <Universe />
+        <Referencias />
         <Cinema />
+        <Trips />
+        <Gallery />
         <Diva />
         <Nursing />
         <Pets />

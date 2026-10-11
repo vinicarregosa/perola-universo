@@ -35,9 +35,67 @@
   overflow-wrap: break-word;
 }
 
+.featured {
+  margin-top: 2rem;
+  background: var(--floral-white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: var(--shadow-soft);
+  min-width: 0;
+}
+
+.featuredTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--wine-900);
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.thumb {
+  border-radius: var(--radius-md);
+  background: var(--cream-200);
+}
+
+/* Miniaturas do portal: foto inteira (contain), sobra espaço neutro — nunca corta */
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.galleryLink {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--tap-min);
+  min-width: var(--tap-min);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--wine-700);
+  color: var(--wine-900);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
 @media (min-width: 720px) {
   .portal {
     padding: 5.5rem 0;
+  }
+
+  .thumbs {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

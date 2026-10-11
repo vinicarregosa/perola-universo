@@ -22,11 +22,12 @@ export function SectionShell({
   children,
 }: SectionShellProps) {
   const headingId = `${id}-titulo`;
+  const wine = tone === "wine";
   return (
     <section
       id={id}
       aria-labelledby={headingId}
-      className={`${styles.shell} ${styles[`tone-${tone}`]}`}
+      className={`${styles.shell} ${styles[`tone-${tone}`]}${wine ? " on-wine" : ""}`}
     >
       <div className="container">
         <ChapterHeading

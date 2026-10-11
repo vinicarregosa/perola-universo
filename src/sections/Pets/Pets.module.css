@@ -1,7 +1,18 @@
 .grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   min-width: 0;
+  align-items: stretch;
+}
+
+/* Célula igual para Snow e Pedro — o wrapper do Reveal estica
+   e o card preenche 100% da célula. */
+.item {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
 }
 
 .card {
@@ -11,9 +22,54 @@
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   transition:
     transform 0.25s var(--ease-out),
     box-shadow 0.25s var(--ease-out);
+}
+
+/* Frame UNIFICADO Snow + Pedro — mesma proporção, foto inteira sem corte.
+   aspect-ratio único (4/5, entre 0.75 da Snow e 0.88 do Pedro) + contain:
+   nenhum pixel é cortado, o fundo neutro faz o letterbox. Mesma borda/padding. */
+.photo {
+  background: var(--cream-200);
+  border-bottom: 1px solid var(--line);
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--cream-200);
+}
+
+.photoFrame {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Estado placeholder (img ainda não confirmada) preenche o mesmo frame,
+   mantendo as 2 células iguais mesmo sem foto. */
+.photoFrame > div {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
 }
 
 @media (hover: hover) {
@@ -28,6 +84,8 @@
   display: grid;
   gap: 0.6rem;
   min-width: 0;
+  flex: 1 1 auto;
+  align-content: start;
 }
 
 .name {
@@ -108,5 +166,15 @@
   .birthday {
     padding: 2.25rem 2rem;
     margin-top: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }

@@ -9,7 +9,23 @@ import styles from "./Distance.module.css";
 export function Distance() {
   const c = site.distance;
   const [hugged, setHugged] = useState(false);
+  const [hugIndex, setHugIndex] = useState(0);
   const reduced = useReducedMotion();
+
+  const messages = c.hugMessages.length > 0 ? c.hugMessages : [c.hugMessage];
+  const currentMessage = messages[hugIndex % messages.length];
+
+  function handleHug() {
+    setHugged(true);
+  }
+
+  function handleAnother() {
+    setHugIndex((i) => (i + 1) % messages.length);
+  }
+
+  function handleReset() {
+    setHugged(false);
+  }
 
   return (
     <SectionShell
@@ -30,7 +46,7 @@ export function Distance() {
 
           <Reveal>
             <p className={styles.badge} role="note">
-              <span aria-hidden="true">🧸</span> {c.badge}
+              {c.badge}
             </p>
           </Reveal>
 
@@ -39,24 +55,36 @@ export function Distance() {
               <button
                 type="button"
                 className="btn btn-wine"
-                onClick={() => setHugged(true)}
+                onClick={handleHug}
                 aria-expanded={hugged}
               >
                 {c.hugButton}
               </button>
             ) : (
               <div
+                key={hugIndex}
                 className={`${styles.hug} ${reduced ? "" : styles.hugAnimate}`}
                 role="status"
               >
-                <p className={styles.hugText}>{c.hugMessage}</p>
-                <button
-                  type="button"
-                  className={`btn btn-outline-wine ${styles.smallBtn}`}
-                  onClick={() => setHugged(false)}
-                >
-                  Guardar para depois
-                </button>
+                <p className={styles.hugText}>{currentMessage}</p>
+                <div className={styles.hugActions}>
+                  {messages.length > 1 ? (
+                    <button
+                      type="button"
+                      className="btn btn-wine"
+                      onClick={handleAnother}
+                    >
+                      {c.hugAnother}
+                    </button>
+                  ) : null}
+                  <button
+                    type="button"
+                    className={`btn btn-outline-wine ${styles.smallBtn}`}
+                    onClick={handleReset}
+                  >
+                    {c.hugReset}
+                  </button>
+                </div>
               </div>
             )}
           </Reveal>
@@ -66,7 +94,7 @@ export function Distance() {
           <PlaceholderPhoto
             src={c.image}
             alt={c.imageAlt}
-            aspect="4 / 5"
+            label={c.imageCaption}
           />
         </Reveal>
       </div>

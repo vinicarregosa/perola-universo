@@ -1,0 +1,166 @@
+.empty {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Mural: 1 coluna no celular, 3 colunas no desktop.
+   Sem destaque/hero — todos os itens usam o mesmo .cell,
+   cada célula com altura natural da foto. */
+.mural {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  min-width: 0;
+  align-items: start;
+}
+
+.cell {
+  min-width: 0;
+}
+
+.item {
+  margin: 0;
+  min-width: 0;
+}
+
+.thumbBtn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  min-height: var(--tap-min);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  font: inherit;
+}
+
+.thumb {
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  background: var(--cream-200);
+  /* Sem aspect-ratio fixo: o frame abraça a proporção natural da foto */
+  width: 100%;
+}
+
+/* Miniaturas: foto inteira, sem corte (contain).
+   Altura natural — cada célula tem a altura da própria foto. */
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Placeholder (foto ausente) segue altura natural */
+.thumb > div {
+  width: 100%;
+  height: auto;
+}
+
+.legend {
+  margin: 0.55rem 0.25rem 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.loc {
+  font-weight: 700;
+}
+
+/* Lightbox */
+.lightbox {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.lbTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--wine-900);
+}
+
+.lbImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 62vh;
+  max-height: 62svh;
+  max-height: 62dvh;
+  object-fit: contain;
+  object-position: center;
+  border-radius: var(--radius-md);
+  background: var(--cream-200);
+}
+
+.lbMissing {
+  margin: 0;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+  background: var(--cream-100);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.lbLegend {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.lbCount {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-700);
+}
+
+.lbControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.lbControls :global(.btn) {
+  flex: 1 1 140px;
+  min-height: var(--tap-comfort);
+}
+
+@media (min-width: 720px) {
+  .mural {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .lbControls {
+    flex-wrap: nowrap;
+  }
+
+  .lbControls :global(.btn) {
+    flex: 0 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumbBtn {
+    transition: none;
+  }
+}

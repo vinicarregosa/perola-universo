@@ -6,6 +6,7 @@ interface AudioPlayerProps {
   title: string;
   artist: string;
   transcript?: string;
+  missingNote?: string;
 }
 
 function fmt(total: number): string {
@@ -15,16 +16,44 @@ function fmt(total: number): string {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-export function AudioPlayer({ src, title, artist, transcript }: AudioPlayerProps) {
+export function AudioPlayer({ src, title, artist, transcript, missingNote }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState<number>(NaN);
   const [current, setCurrent] = useState(0);
   const [missing, setMissing] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+
+  // HEAD antes de expor o <audio>: não carrega arquivo inexistente, sem 404 no console.
+  useEffect(() => {
+    if (!src) {
+      setMissing(true);
+      return;
+    }
+    if (!src.startsWith("/")) {
+      setConfirmed(true);
+      return;
+    }
+    let cancelled = false;
+    setConfirmed(false);
+    setMissing(false);
+    fetch(src, { method: "HEAD" })
+      .then((res) => {
+        if (cancelled) return;
+        if (res.ok) setConfirmed(true);
+        else setMissing(true);
+      })
+      .catch(() => {
+        if (!cancelled) setMissing(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [src]);
 
   useEffect(() => {
     const el = audioRef.current;
-    if (!el) return;
+    if (!el || !confirmed) return;
     const onMeta = () => setDuration(el.duration);
     const onTime = () => setCurrent(el.currentTime);
     const onEnd = () => setPlaying(false);
@@ -39,11 +68,14 @@ export function AudioPlayer({ src, title, artist, transcript }: AudioPlayerProps
       el.removeEventListener("ended", onEnd);
       el.removeEventListener("error", onErr);
     };
-  }, [src]);
+  }, [src, confirmed]);
 
   async function toggle() {
     const el = audioRef.current;
-    if (!el) return;
+    if (!el || !confirmed) {
+      setMissing(true);
+      return;
+    }
     try {
       if (el.paused) {
         await el.play();
@@ -63,9 +95,51 @@ export function AudioPlayer({ src, title, artist, transcript }: AudioPlayerProps
     ? Math.min(100, (current / duration) * 100)
     : 0;
 
+  if (!confirmed && !missing) {
+    return (
+      <div className={styles.player} aria-busy="true">
+        <p className={styles.hint} role="status">
+          Conferindo a trilha sonora…
+        </p>
+      </div>
+    );
+  }
+
+  if (missing && !confirmed) {
+    return (
+      <div className={styles.player}>
+        <div className={styles.row}>
+          <button
+            type="button"
+            className={styles.play}
+            disabled
+            aria-label={`${title} — indisponível por enquanto`}
+            aria-disabled="true"
+          >
+            <span aria-hidden="true">♫</span>
+          </button>
+          <div className={styles.meta}>
+            <p className={styles.track}>{title}</p>
+            <p className={styles.artist}>{artist}</p>
+          </div>
+        </div>
+        <p className={styles.hint} role="status">
+          {missingNote ??
+            "Sem arquivo de música por enquanto — salve o MP3 como public/audio/trilha.mp3 e ele toca aqui. Nada quebra sem o arquivo."}
+        </p>
+        {transcript ? (
+          <details className={styles.transcript}>
+            <summary>Ver transcrição / clima da faixa</summary>
+            <p>{transcript}</p>
+          </details>
+        ) : null}
+      </div>
+    );
+  }
+
   return (
     <div className={styles.player}>
-      <audio ref={audioRef} src={src} preload="none" />
+      {confirmed ? <audio ref={audioRef} src={src} preload="none" /> : null}
       <div className={styles.row}>
         <button
           type="button"
@@ -98,9 +172,8 @@ export function AudioPlayer({ src, title, artist, transcript }: AudioPlayerProps
       </div>
       {missing ? (
         <p className={styles.hint} role="status">
-          [EDITAR] Áudio ainda não publicado — salve o MP3 como{" "}
-          <code>public/audio/trilha.mp3</code> e ele tocará aqui. Nada quebra
-          sem o arquivo.
+          {missingNote ??
+            "Sem arquivo de música por enquanto — salve o MP3 como public/audio/trilha.mp3 e ele toca aqui. Nada quebra sem o arquivo."}
         </p>
       ) : null}
       {transcript ? (

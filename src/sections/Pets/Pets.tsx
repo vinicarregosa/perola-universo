@@ -18,13 +18,16 @@ export function Pets() {
     >
       <div className={styles.grid}>
         {c.cards.map((pet, i) => (
-          <Reveal key={pet.name} delayMs={i * 90}>
+          <Reveal key={pet.name} delayMs={i * 90} className={styles.item}>
             <article className={styles.card}>
-              <PlaceholderPhoto
-                src={pet.image}
-                alt={pet.imageAlt}
-                aspect="4 / 3"
-              />
+              <div className={styles.photo}>
+                <PlaceholderPhoto
+                  src={pet.image}
+                  alt={pet.imageAlt}
+                  label={`Fotografia: ${pet.name} — em breve aqui`}
+                  className={styles.photoFrame}
+                />
+              </div>
               <div className={styles.body}>
                 <h3 className={styles.name}>
                   {pet.name}{" "}
