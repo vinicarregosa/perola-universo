@@ -220,7 +220,7 @@ export const site: SiteContent = {
         tag: "carta da alta sociedade",
         teaser: "Fofocas, bailes e olhares que dizem tudo.",
         revealed:
-          "Por este meio, esta autora declara que qualquer baile empalidece diante do nosso sofá — onde o par é certo, a pipoca é farta e o par romântico nunca atrasa.",
+          "Cara leitora, dizem que a temporada reserva os romances mais encantadores, mas este autor duvida que algum cavalheiro de Londres seja capaz de superar aquele que escolheu estar ao seu lado.",
         image: "/images/cinema/bridgerton.jpeg",
         imageAlt: "Imagem ilustrativa do relato do baile",
       },
@@ -230,7 +230,7 @@ export const site: SiteContent = {
         tag: "relatório policial",
         teaser: "Caso arquivado: saudade em excesso.",
         revealed:
-          "Boletim de ocorrência afetiva — vítima: um namorado; causa: saudade em excesso após maratona; providência: abraço de urso imediato e reprise do episódio favorito lado a lado.",
+          "Ok, aqui vai. Ma, eu te amo. Eu amo como você é inteligente. Eu amo como você é linda. Amo seu rosto e amo sua bunda. Eu deveria ter anotado isso primeiro. Esse o título do nosso filme porno.",
         image: "/images/cinema/99.jpeg",
         imageAlt: "Imagem ilustrativa do caso nº 2",
       },
@@ -240,7 +240,7 @@ export const site: SiteContent = {
         tag: "sessão riso solto",
         teaser: "Lives, jogos e comentários impossíveis.",
         revealed:
-          "Ver Brino com você é terapia do riso — pausamos, rebobinamos a piada e rimos de novo, porque alegria boa é alegria compartilhada.",
+          "Assistir a vídeos com você é garantia de boas risadas. Às vezes, a gente ri mais da nossa reação do que do próprio vídeo, e é isso que torna tudo mais divertido.",
         image: "/images/cinema/brino.jpeg",
         imageAlt: "Imagem ilustrativa do relato do riso solto",
       },
@@ -352,7 +352,7 @@ export const site: SiteContent = {
     openButton: "Abrir a surpresa",
     modalTitle: "Participação especial",
     modalBody:
-      "Guardei este espaço para uma homenagem. Enquanto ela não chega, fica aqui o convite: volte depois para conferir.",
+      "O vídeo da diva mais aguardada chegou para deixar seu aniversário ainda mais icônico. Porque você merece esse surto de qualidade!",
     videoSrc: "/images/diva/WhatsApp%20Video%202026-10-11%20at%2002.33.49.mp4",
     fallbackMessage: "A surpresa mora aqui — em breve.",
     videoHint: "O vídeo aparece aqui quando estiver pronto.",
@@ -414,12 +414,11 @@ export const site: SiteContent = {
     preview: "“Ma, feliz aniversário — o resto está na carta.”",
     openButton: "Ler a carta completa",
     full: [
-      "Ma, feliz aniversário. Hoje, 12 de outubro, o calendário faz o favor de lembrar o óbvio: o mundo ficou melhor no dia em que você chegou.",
-      "De longe, aprendi a te amar em detalhes pequenos. No lírio que me faz parar na floricultura, no pincel fora do lugar que me arranca um sorriso, na notificação de mensagem sua que muda o ritmo do meu dia.",
-      "Admiro você de um jeito inteiro: o capricho da maquiagem, a calma da leitura, a vocação do cuidado. Ver você no caminho do técnico de enfermagem me dá um orgulho que não cabe em mensagem curta — é técnica e ternura na mesma pessoa.",
-      "A distância existe, não vou fingir que não. Ela pesa em dia comum e aperta em data bonita. Mas ela nunca foi maior que nós: virou chamada longa, virou plano, virou contagem para o próximo encontro — esses reencontros a cada seis meses, mais ou menos, que viram feriado particular.",
-      "E tem a nossa trupe: Snow guardando o sofá como quem guarda tesouro, Pedro julgando tudo lá de cima com sua sabedoria felina. Minha imagem favorita tem esse cenário — você rindo, eu do seu lado, eles disputando atenção.",
-      "Então é isso, minha Pérola: que este novo ano venha leve, com saúde, com histórias boas para ler e com gente que te ama por perto — eu na primeira fila. Come um pedaço de bolo por mim, faz um pedido bonito e guarda este cantinho aqui para quando a saudade bater.",
+      "Meu amor! Feliz aniversário! Hoje, dia 12 de outubro, é um dia tão especial. O mundo ganhou uma pessoa incrível, e eu tive a sorte de encontrar nela o amor da minha vida.",
+      "Eu te amo do fundo do meu coração. Mesmo sendo muito difícil viver longe de ti, eu amo cada detalhe seu, amo estar com você e a sua companhia. Cada momento ao seu lado é especial, até aqueles mais simples, que talvez pareçam pequenos, mas que, para mim, se tornam lembranças que guardo com muito carinho. Eu te admiro profundamente, tenho muito orgulho de ti e estarei sempre te apoiando nas suas decisões, nos seus sonhos e na sua carreira. Quero te ver conquistando tudo aquilo que deseja e, sempre que possível, estar ao seu lado para comemorar cada vitória sua.",
+      "A distância existe e dói bastante, nas datas comemorativas e no dia a dia. Dói não poder te abraçar quando quero, não poder estar contigo em todos os momentos e não poder transformar cada saudade em um beijo. Mas ela não é e nunca vai ser maior que nós, maior que o nosso amor. Afinal, mesmo longe, você continua fazendo parte dos meus dias, dos meus planos e de tudo aquilo que imagino para o futuro. Vamos continuar nos amando, com muito cuidado e delicadeza. Vamos continuar estudando, crescendo e construindo nosso caminho para termos um futuro maravilhoso juntos, como uma família. E que nossas famílias também possam viver juntas, com muito amor, compartilhando momentos felizes e construindo novas lembranças. Quando penso no futuro, é você quem eu quero encontrar ao meu lado, dividindo a vida, os sonhos, as conquistas e até os dias mais comuns, porque, no fim, são eles que também fazem a vida valer a pena.",
+      "Então é isso, minha Pérola. Desejo que este novo ano venha leve, com saúde, com histórias boas para ler e com gente que te ama por perto, eu na primeira fila. Que nunca te faltem motivos para sorrir, sonhos para perseguir e carinho para te lembrar do quanto você é especial. Queria muito poder estar aí hoje, te abraçar bem forte, olhar nos seus olhos e te lembrar pessoalmente de tudo isso, mas, enquanto não posso, espero que estas palavras consigam te fazer sentir um pouquinho do amor que tenho por ti. Come um pedaço de bolo por mim, faz um pedido bonito e guarda este cantinho aqui para quando a saudade bater. Que, de alguma forma, ele te lembre de que existe alguém que te ama muito, que torce por ti e que está contando os dias para poder viver tudo isso bem pertinho de você.",
+      "Conte comigo para todo o sempre, minha Pérola. Que este seja mais um de muitos aniversários que ainda vamos comemorar juntos, com menos distância entre nós e cada vez mais histórias para contar. Eu te amo infinitamente.",
     ],
     signature: "Com todo o meu amor — seu namorado 🤍",
     closeButton: "Fechar carta",
